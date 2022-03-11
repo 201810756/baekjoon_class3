@@ -42,11 +42,11 @@ result=0
 eaten=0
 while True:
     fish=bfs(x,y,shark_age)
-    fish.sort(key=lambda k:(-k[2],-k[0],-k[1]))
+    fish.sort(key=lambda k:(k[2],k[0],k[1]))
     if len(fish)==0:
         break
     else:
-        nx,ny,dist=fish.pop()
+        nx,ny,dist=fish.pop(0)
         state[nx][ny] = 0
         result+=dist
         eaten+=1
